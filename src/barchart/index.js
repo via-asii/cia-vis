@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Bar from './components/bar';
+import Bar from './components/Bar';
+import XAxis from './components/XAxis';
+import YAxis from './components/YAxis';
 import { scaleLinear, max} from 'd3';
 // import * as d3 from "d3";
 
@@ -11,6 +13,7 @@ class BarChart extends Component {
     };
   }
   mouseEnter = (d) => {
+    console.log("here", d);
     this.setState({ focus: d });
   }
   mouseLeave = (d) => {
@@ -23,9 +26,10 @@ class BarChart extends Component {
     const padding = this.props.padding || 50;
     const color = this.props.color || '#32BAEF';
     const {data} = this.props 
-
+    
+    const maxVal = max(data, (d) => d.value)
     const linearScale = scaleLinear()
-        .domain([0, max(data, (d) => d.value)])
+        .domain([0, maxVal])
         .range([0,height - (padding * 2)]);
 
     const barWidth = (width-padding*2)/data.length
@@ -35,6 +39,7 @@ class BarChart extends Component {
     return (
     <svg className={`bar-chart ${this.props.customClass}`} width={width} height={height}>
       <g transform={'translate(' + padding + ',' + padding + ')'}>
+
         {data.map((d, i) => 
           <Bar 
             key={d.label}
@@ -51,6 +56,20 @@ class BarChart extends Component {
           />
         )}
       </g>
+      <XAxis
+        width={width-padding*2}
+        xPos={height-padding}
+        yPos={padding}
+        data={data}
+      />
+      <YAxis
+        height={height-padding*2}
+        xPos={padding}
+        yPos={padding}
+        data={data}
+        range={[0, maxVal]}
+        nTicks={10}
+      />    
     </svg>
     );
   }

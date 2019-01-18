@@ -6,7 +6,7 @@ const Bar = (props) => {
 		<rect 
 			stroke="white" 
 			className="bar" 
-			fill="#90a3b2" 
+			fill={color} 
 			y={props.cheight - props.height} 
 			x={props.x} 
 			width={props.width} 
