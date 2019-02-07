@@ -33,7 +33,7 @@ class Pie extends Component {
 			.value(function(d) { return d.value; })
 			.sort(null);
 
-
+		
 		const focused = this.state.focus ? this.state.focus.label : null;
 		const percent = this.props.isPercent ? '%' : null;
 	  return (
@@ -46,7 +46,7 @@ class Pie extends Component {
 						mouseLeave={()=>this.mouseLeave(slice.data)}
 						value={slice.data.value + '%'}
 						d={arcfunc(slice)}
-						fill={color(i)}
+						fill={slice.data.color ? slice.data.color : color(i)}
 						focused={false}
 					/>
 				)}

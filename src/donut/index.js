@@ -48,7 +48,7 @@ class Donut extends Component {
 						label={slice.data.label}
 						value={slice.data.value + '%'}
 						d={arcfunc(slice)}
-						fill={color(i)}
+						fill={slice.data.color ? slice.data.color : color(i)}
 						focused={focused === slice.data.label}
 					/>
 				)}

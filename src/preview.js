@@ -27,7 +27,7 @@ const App = () => {
 				thickness="30"
 				data={[
 				  {label: "USA", value: 40},
-				  {label: "UK", value: 20},
+				  {label: "UK", value: 20, color: '#C2DD08'},
 				  {label: "Canada", value: 30},
 				  {label: "Mexico", value: 10},
 				]}
