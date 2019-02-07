@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import {BarChart, Donut} from './index';
+import {BarChart, Donut, Pie} from './index';
 
 const App = () => {
 	return (
@@ -19,6 +19,19 @@ const App = () => {
 				  {label: "Mexico", value: 10},
 				]}
 				customClass="donut-1"
+			/>
+			<Pie
+				isPercent={true}
+				width="300"
+				height="300"
+				thickness="30"
+				data={[
+				  {label: "USA", value: 40},
+				  {label: "UK", value: 20},
+				  {label: "Canada", value: 30},
+				  {label: "Mexico", value: 10},
+				]}
+				customClass="pie-1"
 			/>
 			<BarChart
 				isPercent={true}

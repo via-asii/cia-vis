@@ -2,8 +2,10 @@
 
 import BarChart from './barchart'; 
 import Donut from './donut'; 
+import Pie from './pie'; 
 
 export { 
 	BarChart,
-	Donut 
+	Donut,
+	Pie
 };
