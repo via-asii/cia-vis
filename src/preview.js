@@ -24,7 +24,6 @@ const App = () => {
 				isPercent={true}
 				width="300"
 				height="300"
-				thickness="30"
 				data={[
 				  {label: "USA", value: 40},
 				  {label: "UK", value: 20, color: '#C2DD08'},
