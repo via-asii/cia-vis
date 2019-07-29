@@ -2,49 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import {BarChart, Donut, Pie} from './index';
+import {BarChart, Donut, Pie, LineChart} from './index';
 
 const App = () => {
 	return (
 		<div>
-			<Donut
-				isPercent={true}
-				width="300"
-				height="300"
-				thickness="30"
-				data={[
-				  {label: "USA", value: 40},
-				  {label: "UK", value: 20},
-				  {label: "Canada", value: 30},
-				  {label: "Mexico", value: 10},
-				]}
-				customClass="donut-1"
-			/>
-			<Pie
-				isPercent={true}
-				width="300"
-				height="300"
-				data={[
-				  {label: "USA", value: 40},
-				  {label: "UK", value: 20, color: '#C2DD08'},
-				  {label: "Canada", value: 30},
-				  {label: "Mexico", value: 10},
-				]}
-				customClass="pie-1"
-			/>
-			<BarChart
-				isPercent={true}
-				width="200"
-				height="600"
-				padding="30"
-				data={[
-				  {label: "USA", value: 40},
-				  {label: "UK", value: 20},
-				  {label: "Canada", value: 30},
-				  {label: "Mexico", value: 10},
-				]}
-				customClass="donut-1"
-			/>
+
+			<LineChart/>
 		</div>
 	)
 }
@@ -56,3 +20,47 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+
+
+
+
+			// <Donut
+			// 	isPercent={true}
+			// 	width="300"
+			// 	height="300"
+			// 	thickness="30"
+			// 	data={[
+			// 	  {label: "USA", value: 40},
+			// 	  {label: "UK", value: 20},
+			// 	  {label: "Canada", value: 30},
+			// 	  {label: "Mexico", value: 10},
+			// 	]}
+			// 	customClass="donut-1"
+			// />
+			// <Pie
+			// 	isPercent={true}
+			// 	width="300"
+			// 	height="300"
+			// 	data={[
+			// 	  {label: "USA", value: 40},
+			// 	  {label: "UK", value: 20, color: '#C2DD08'},
+			// 	  {label: "Canada", value: 30},
+			// 	  {label: "Mexico", value: 10},
+			// 	]}
+			// 	customClass="pie-1"
+			// />
+			// <BarChart
+			// 	isPercent={true}
+			// 	width="200"
+			// 	height="600"
+			// 	padding="30"
+			// 	data={[
+			// 	  {label: "USA", value: 40},
+			// 	  {label: "UK", value: 20},
+			// 	  {label: "Canada", value: 30},
+			// 	  {label: "Mexico", value: 10},
+			// 	]}
+			// 	customClass="donut-1"
+			// />
